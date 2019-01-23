@@ -1,8 +1,8 @@
--- drop database if exists tableitSDC;
+drop database if exists tableitsdc;
 
--- create database tableitSDC;
+create database tableitsdc;
 
-\c tableitSDC;
+\c tableitsdc;
 
 DROP TABLE restaurants, cities, cuisines;
 
@@ -24,7 +24,7 @@ CREATE TABLE cuisines (
   PRIMARY KEY(id)
 );
 
-COPY restaurants (id, restaurantName)FROM '/Users/daniellin215/Desktop/searchBarSDC/database/csv/restaurants.csv' DELIMITER ',' csv;
-COPY cities (id, cities) FROM '/Users/daniellin215/Desktop/searchBarSDC/database/csv/cities.csv' DELIMITER ',' csv;
-COPY cuisines (id, cuisineName) FROM '/Users/daniellin215/Desktop/searchBarSDC/database/csv/cuisines.csv' DELIMITER ',' csv;
+\COPY restaurants (id, restaurantName)FROM '/Users/daniellin215/Desktop/searchBarSDC/database/csv/restaurants.csv' DELIMITER ',' csv;
+\COPY cities (id, cities) FROM '/Users/daniellin215/Desktop/searchBarSDC/database/csv/cities.csv' DELIMITER ',' csv;
+\COPY cuisines (id, cuisineName) FROM '/Users/daniellin215/Desktop/searchBarSDC/database/csv/cuisines.csv' DELIMITER ',' csv;
 
