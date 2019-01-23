@@ -1,12 +1,12 @@
-const mysql = require('mysql');
-const mysqlConfig = require('./config.js');
+// const mysql = require('mysql');
+// const mysqlConfig = require('./config.js');
 
-const connection = mysql.createConnection(mysqlConfig);
+// const connection = mysql.createConnection(mysqlConfig);
 
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('tableit', 'root', 'password', {
+const sequelize = new Sequelize('tableitSDC', 'daniellin215', 'password', {
     host: 'localhost',
-    dialect: 'mysql',
+    dialect: 'postgres',
     pool: {
         max: 5,
         min: 0,
@@ -16,5 +16,12 @@ const sequelize = new Sequelize('tableit', 'root', 'password', {
     operatorsAliases: false
 });
 
-module.exports = { connection, sequelize };
+module.exports = { sequelize };
 // connection.end();
+
+// const { Client } = require('pg');
+// const client = new Client();
+// await client.connect();
+// const res = await client.query('SELECT $1::text as message', ['Hello world!']);
+// console.log(res.rows[0].message);
+// await client.end();
