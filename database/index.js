@@ -4,9 +4,10 @@
 // const connection = mysql.createConnection(mysqlConfig);
 
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('tableitsdc', 'daniellin215', 'password', {
-    host: 'localhost',
+const sequelize = new Sequelize('tableitsdc', 'postgres', 'password', {
+    host: '52.53.216.222',
     dialect: 'postgres',
+    port: 5432,
     pool: {
         max: 5,
         min: 0,

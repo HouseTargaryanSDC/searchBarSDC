@@ -66,3 +66,5 @@ typings/
 
 # CSV data
 database/csv/
+
+client/dist/bundle.js

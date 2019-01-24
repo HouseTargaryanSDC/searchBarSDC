@@ -34,7 +34,7 @@ class Search extends React.Component {
         }, () => {
             if (this.state.text.length > 1) {
                 let searched = this.state.text;
-                axios.get(`http://localhost:9004/api/search/${searched}`)
+                axios.get(`http://54.183.64.166:9004/api/search/${searched}`)
                     .then(data => {
                         console.log('zeet', data.data);
                         let result = data.data;
