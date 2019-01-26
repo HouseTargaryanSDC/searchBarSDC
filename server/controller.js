@@ -12,14 +12,13 @@ const getCities = (req, res) => {
 
 const getSearchResults = (req, res) => {
     const searched = req.params.searched;
-    console.log('lmao',searched);
     queryCategories(searched, (err, data) => {
         if (err) {
             console.log('errrrrr', err)
             res.status(404).send(err)
         }
-        else { console.log('yeet', data);
-            res.status(200).send(data) }
+        else {
+            res.status(200).send(data)}
     })
 }
 

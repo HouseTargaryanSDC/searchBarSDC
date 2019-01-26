@@ -36,7 +36,6 @@ class Search extends React.Component {
                 let searched = this.state.text;
                 axios.get(`http://18.144.27.249:9001/api/search/${searched}`)
                     .then(data => {
-                        console.log('zeet', data.data);
                         let result = data.data;
                         this.setState({
                             cityMatch: result.cities.slice(0, 5),

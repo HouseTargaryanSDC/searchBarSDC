@@ -59,7 +59,6 @@ const queryCategories = (query, callback) => {
       arr.push(city.cities)
     })
     result['cities'] = arr;
-    console.log('yeee', result);
     sequelize.query(`select * from cuisines where newcol @@ to_tsquery('${query}')`, {type: sequelize.QueryTypes.SELECT})
     .then(cuisines => {
         let arr = [];
