@@ -52,21 +52,21 @@ sequelize.sync();
 
 const queryCategories = (query, callback) => {
   let result = {};
-  sequelize.query(`select * from cities where newcol @@ to_tsquery('${query}')`, {type: sequelize.QueryTypes.SELECT})
+  sequelize.query(`select * from cities where newcol @@ to_tsquery('${query}') limit 5`, {type: sequelize.QueryTypes.SELECT})
   .then(cities => {
     let arr = [];
     cities.forEach((city) => {
       arr.push(city.cities)
     })
     result['cities'] = arr;
-    sequelize.query(`select * from cuisines where newcol @@ to_tsquery('${query}')`, {type: sequelize.QueryTypes.SELECT})
+    sequelize.query(`select * from cuisines where newcol @@ to_tsquery('${query}') limit 5`, {type: sequelize.QueryTypes.SELECT})
     .then(cuisines => {
         let arr = [];
         cuisines.forEach((cuisine) => {
           arr.push(cuisine.cuisinename)
         })
         result['cuisines'] = arr;
-        sequelize.query(`select * from restaurants where newcol @@ to_tsquery('${query}')`, {type: sequelize.QueryTypes.SELECT})
+        sequelize.query(`select * from restaurants where newcol @@ to_tsquery('${query}') limit 5`, {type: sequelize.QueryTypes.SELECT})
         .then((restaurants) => {
           let arr = [];
           restaurants.forEach((restaurant) => {

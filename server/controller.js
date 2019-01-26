@@ -14,7 +14,6 @@ const getSearchResults = (req, res) => {
     const searched = req.params.searched;
     queryCategories(searched, (err, data) => {
         if (err) {
-            console.log('errrrrr', err)
             res.status(404).send(err)
         }
         else {
