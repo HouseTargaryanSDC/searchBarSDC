@@ -14,6 +14,7 @@ const sequelize = new Sequelize('tableitsdc', 'postgres', 'password', {
         acquire: 30000,
         idle: 10000
     },
+    logging: false,
     operatorsAliases: false
 });
 
